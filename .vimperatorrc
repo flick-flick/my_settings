@@ -1,0 +1,7 @@
+set guioptions=mTbrb
+" jの移動量
+noremap j 5<C-e>
+" kの移動量
+noremap k 5<C-y>
+hi Hint z-index:5000; font-size:14px; color:white; background-color:blue;border-color:ButtonShadow; border-width:0px; border-style:solid; padding:0px 2px 0px 2px; position:absolute;font-family: Menlo, Consolas, Monaco, monospace; text-transform: uppercase; 
+set hintchars=abcde
