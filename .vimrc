@@ -1,4 +1,6 @@
-"オートインデン
+"強調表示
+syntax on
+"オートインデント
 set autoindent
 "cinwordsと同時に使うと指定した文字列の後にインデントを一段深くする
 set smartindent
@@ -25,8 +27,6 @@ set scrolloff=10
 set shiftwidth=4
 "対応する括弧を表示
 set showmatch
-"強調表示
-set syntax=ON
 "カーソル行の強調表示
 set cursorline
 highlight CursorLine ctermbg=black guibg=black
