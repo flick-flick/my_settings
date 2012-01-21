@@ -52,7 +52,8 @@ nnoremap <C-Tab>   gt
  Bundle 'L9'
  Bundle 'The-NERD-tree'
  Bundle 'FuzzyFinder'
- 
+ Bundle 'quickhl.vim'
+
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
 
@@ -69,4 +70,8 @@ nnoremap <C-Tab>   gt
  " see :h vundle for more details or wiki for FAQ
 
 
-
+nmap <Space>m <Plug>(quickhl-toggle)
+xmap <Space>m <Plug>(quickhl-toggle)
+nmap <Space>M <Plug>(quickhl-reset)
+xmap <Space>M <Plug>(quickhl-reset)
+nmap <Space>j <Plug>(quickhl-match)
