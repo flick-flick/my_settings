@@ -27,32 +27,59 @@ set scrolloff=10
 set shiftwidth=4
 "対応する括弧を表示
 set showmatch
-"カーソル行の強調表示
+" カーソル行をハイライト
 set cursorline
-highlight CursorLine ctermbg=black guibg=black
+" カレントウィンドウにのみ罫線を引く
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+hi clear CursorLine
+hi CursorLine gui=underline
+highlight CursorLine ctermbg=darkgrey guibg=darkgrey
+
+
+
 "タブ切り替え
 nnoremap <C-Tab>   gt
 
 
-let $GIT_SSL_NO_VERIFY = 'true'
-set nocompatible
-filetype off
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+ set nocompatible               " be iMproved
+ filetype off                   " required!
+ set rtp+=~/.vim/vundle.git/
+ call vundle#rc()
+ " let Vundle manage Vundle
+ " required!
+ Bundle 'gmarik/vundle'
+ " My Bundles here:
+ "
+ " original repos on github
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'Lokaltog/vim-easymotion'
+ "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+ Bundle 'tpope/vim-rails.git'
+ " vim-scripts repos
+ Bundle 'L9'
+ Bundle 'The-NERD-tree'
+ Bundle 'FuzzyFinder'
+ Bundle 'quickhl.vim'
+ Bundle 'quickrun.vim'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+ " non github repos
+ Bundle 'git://git.wincent.com/command-t.git'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'rails.vim'
-Bundle 'git://git.wincent.com/command-t.git'
-filetype plugin indent on
-
-Bundle 'The-NERD-tree'
-Bundle 'FuzzyFinder'
-Bundle 'quickhl.vim'
+ 
+ " ...
+ filetype plugin indent on     " required!
+ "
+ " Brief help
+ " :BundleList          - list configured bundles
+ " :BundleInstall(!)    - install(update) bundles
+ " :BundleSearch(!) foo - search(or refresh cache first) for foo
+ " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+ "
+ " see :h vundle for more details or wiki for FAQ
 
 
 nmap <Space>m <Plug>(quickhl-toggle)
@@ -60,8 +87,3 @@ xmap <Space>m <Plug>(quickhl-toggle)
 nmap <Space>M <Plug>(quickhl-reset)
 xmap <Space>M <Plug>(quickhl-reset)
 nmap <Space>j <Plug>(quickhl-match)
-
-
-" pythonデバッグ
-nmap <F5> :!/usr/bin/python %<CR>
-nmap <F12> :!/usr/lib/python2.4/pdb.py %<CR>
