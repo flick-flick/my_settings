@@ -35,9 +35,9 @@ augroup cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-hi clear CursorLine
-hi CursorLine gui=underline
-highlight CursorLine ctermbg=darkgrey guibg=darkgrey
+"hi clear CursorLine
+"hi CursorLine gui=underline
+" highlight CursorLine ctermbg=darkgray guibg=darkgray
 
 
 
@@ -47,7 +47,7 @@ nnoremap <C-Tab>   gt
 
  set nocompatible               " be iMproved
  filetype off                   " required!
- set rtp+=~/.vim/vundle.git/
+ set rtp+=~/.vim/vundle/
  call vundle#rc()
  " let Vundle manage Vundle
  " required!
